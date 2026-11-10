@@ -3,10 +3,12 @@ import java.util.Random;
 
 public class Giocatore implements Runnable {
     String nome;
+    String parola;
     int punteggio;
 
-    public Giocatore(String nome) {
+    public Giocatore(String nome, String parola) {
         this.nome = nome;
+        this.parola = parola;
         this.punteggio = 0;
     }
 
@@ -14,8 +16,8 @@ public class Giocatore implements Runnable {
     public void run(){
         Long tempoInizio = System.currentTimeMillis();
         int numero=10;
-        String parola = "Buongiorno";
         punteggio=100;
+        Cifratura cifratura = new Cifratura();
         System.out.println("Giocatore: "+ nome);
 
         for (int i=0; i <numero; i++){

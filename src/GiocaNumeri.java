@@ -1,12 +1,26 @@
+import java.util.Scanner;
+
 public class GiocaNumeri {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Inserisci i dati dei giocatori");
+
+        System.out.println("Giocatore 1: \nNome: ");
+        String g1Nome = scanner.nextLine();
+        System.out.println("Parola: ");
+        String g1Parola = scanner.nextLine();
+
+        System.out.println("Giocatore 2: \nNome: ");
+        String g2Nome = scanner.nextLine();
+        System.out.println("Parola: ");
+        String g2Parola = scanner.nextLine();
+
+        Thread tg1 = new Thread(new Giocatore(g1Nome, g1Parola));
+        Thread tg2 = new Thread(new Giocatore(g2Nome, g2Parola));
+
         Long TempoEsecuzioneInizio = System.currentTimeMillis();
         System.out.println("Inizio");
-        Giocatore g1= new Giocatore("Francesco"); //un giocatore che si comporta come un Runnable
-        Giocatore g2= new Giocatore("Monica");
-        Thread tg1 = new Thread(g1);
-        Thread tg2 = new Thread(g2);
-
         tg1.start();
 
         try {
