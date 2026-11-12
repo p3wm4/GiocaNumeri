@@ -10,14 +10,18 @@ public class GiocaNumeri {
         String g1Nome = scanner.nextLine();
         System.out.println("Parola: ");
         String g1Parola = scanner.nextLine();
+        System.out.println("Chiave: ");
+        String g1Chiave = scanner.nextLine();
 
         System.out.println("Giocatore 2: \nNome: ");
         String g2Nome = scanner.nextLine();
         System.out.println("Parola: ");
         String g2Parola = scanner.nextLine();
+        System.out.println("Chiave: ");
+        String g2Chiave = scanner.nextLine();
 
-        Thread tg1 = new Thread(new Giocatore(g1Nome, g1Parola));
-        Thread tg2 = new Thread(new Giocatore(g2Nome, g2Parola));
+        Thread tg1 = new Thread(new Giocatore(g1Nome, g1Parola, g1Chiave));
+        Thread tg2 = new Thread(new Giocatore(g2Nome, g2Parola, g2Chiave));
 
         Long TempoEsecuzioneInizio = System.currentTimeMillis();
         System.out.println("Inizio");
