@@ -13,9 +13,12 @@
 
             char charChiave = chiave.charAt(i % chiave.length());
 
-            char charCifrato = (char) (charTesto ^ charChiave);
+            /*char charCifrato = (char) (charTesto ^ charChiave);
 
-            risultato.append(charCifrato);
+            risultato.append(charCifrato);*/
+
+            int valCifrato = charTesto ^ charChiave;
+            risultato.append(String.format("0x%02x ", valCifrato));
         }
         return risultato.toString();
     }
